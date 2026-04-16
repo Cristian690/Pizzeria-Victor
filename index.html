@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas Slice Lab</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1><img src="./img/Logo1flotante.png" alt="Slice Lab Logo" class="logo-principal"></h1>
+        <p class="descripcion-titulo">Laboratorio de sabores: El auténtico estilo Detroit</p>
+    </header>
+    
+    <div class="seccion-contacto">
+        <a href="#"> <i class="fa-brands fa-instagram"></i> </a>        
+        <a href="#"> <i class="fa-brands fa-whatsapp"></i> </a>
+    </div>
+
+    <hr class="linea-divisoria">
+    
+    <div class="contenedor-menu">
+        <h2 class="titulo-menu">Menu</h2>
+
+        <hr class="linea-divisoria">
+
+        <div class="tarjeta-pizza" id="pizza-pepperoni" data-precio="23000">
+            <div class="bloque-pizza">
+                <img src="./img/PeperoniFinal.bmp" alt="">
+                <div class="info-texto-pizza">
+                    <h2 class="nombre-pizza">Pepperoni</h2>
+                    <p class="descripcion-pizza">Salsa, queso, peperoni</p>
+                </div>
+                <p class="precio-pizza">$23.000</p>
+            </div>
+            <div class="bloque-buttons">                
+                    <button class="btn-mini" onclick="cambiarCantidad(this, -1)">-</button>
+                    <span class="numero-cantidad">0</span>
+                    <button class="btn-mini" onclick="cambiarCantidad(this, +1)">+</button>
+                    
+            </div>
+        </div>
+
+        <hr class="linea-divisoria">
+
+        <div class="tarjeta-pizza" id="pizza-classic" data-precio="18000">
+            <div class="bloque-pizza">
+                <img src="./img/ClassicCheeseFinal.bmp" alt="">
+                <div class="info-texto-pizza">
+                    <h2 class="nombre-pizza">Classic Cheese</h2>
+                    <p class="descripcion-pizza">Salsa, queso, lluvia de queso</p>
+                </div>
+                <p class="precio-pizza">$18.000</p>
+            </div>
+            <div class="bloque-buttons">                
+                    <button class="btn-mini" onclick="cambiarCantidad(this, -1)">-</button>
+                    <span class="numero-cantidad">0</span>
+                    <button class="btn-mini" onclick="cambiarCantidad(this, +1)">+</button>
+                    
+            </div>
+        </div>
+
+        <hr class="linea-divisoria">
+
+        <div class="tarjeta-pizza" id="pizza-ham" data-precio="20000">
+            <div class="bloque-pizza">
+                <img src="./img/NycHamFinal.bmp" alt="">
+                <div class="info-texto-pizza">
+                    <h2 class="nombre-pizza">NYC Ham</h2>
+                    <p class="descripcion-pizza">Salsa, queso, jamón</p>
+                </div>
+                <p class="precio-pizza">$20.000</p>
+            </div>
+            <div class="bloque-buttons">                
+                    <button class="btn-mini" onclick="cambiarCantidad(this, -1)">-</button>
+                    <span class="numero-cantidad">0</span>
+                    <button class="btn-mini" onclick="cambiarCantidad(this, +1)">+</button>
+                    
+            </div>
+        </div>    
+
+        <hr class="linea-divisoria">
+
+    </div>
+
+    
+    
+    <div class="separador-seccion">
+        
+        <h2 class="titulo-combos">COMBOS</h2>
+        <p class="proximamente">Próximamente más novedades...</p>
+    </div>
+
+    
+
+    <div class="bloque-confirmar">
+        <div class="bloque-total">
+            <p class="texto-total">Total</p>
+            <span class="suma-productos">$ 0</span>
+        </div>
+        
+        <button class="btn-agregar-pedido" id="agregar-pedido" onclick="agregarPedido()">Agregar Pedido <i class="fa-solid fa-cart-shopping"></i></button>
+        <button class="btn-eliminar" onclick="resetSuma()"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+    
+    <div class="capa1">
+        <div class="capa2">
+            <div class="bloque-carrito" id="lista-carrito">
+                <div class="detalles-carrito">
+                    <div class="descripcion-carrito">
+                        
+                    </div>
+                    <div class="bloque-pago-envio" style="display: none;">
+                            <div class="bloque-pago">
+                                <form action="">
+                                    <ul>
+                                        <li>
+                                            <input type="radio" name="checkPago" id="efectivo" value="Efectivo">
+                                            <label for="efectivo">Efectivo</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="checkPago" id="transferencia" value="Transferencia">
+                                            <label for="transferencia">Transferencia</label>
+                                        </li>                                        
+                                    </ul>
+                                    <hr>
+                                    <ul>
+                                        <li>
+                                            <input type="radio" name="checkenvio" id="retiro" value="Retiro">
+                                            <label for="retiro">Retiro en Local</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="checkenvio" id="envio" value="Envio">
+                                            <label for="envio">Envío a Domicilio</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <hr>
+                            <div class="bloque-envio">
+                                
+                            </div>
+                        </div>
+                    <div class="bloque-total-confirmar">
+                        <div class="texto-total-confirmar" >Total:</div>
+                        <div class="precio-total-confirmar">$ 0</div>
+                    </div>
+                </div>
+
+                <div class="bloque-bt-carrito">
+                    <button class="btn-enviar-pedido" onclick="enviarWhatsapp()">Enviar Pedido</button>
+                    <button class="btn-volver" onclick="volver()">Volver</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
