@@ -26,9 +26,9 @@ WhatsApp Web API (URL scheme)
 ## 🚀 Roadmap
 This project is designed for scalability:
 
-✅ Phase 1 (Current): Hardcoded single-client implementation
-🔄 Phase 2 (Planned): Admin panel for menu management
-🎯 Phase 3 (Future): Multi-tenant SaaS platform with white-label customization
+-✅ Phase 1 (Current): Hardcoded single-client implementation
+-🔄 Phase 2 (Planned): Admin panel for menu management
+-🎯 Phase 3 (Future): Multi-tenant SaaS platform with white-label customization
 
 ## 💡 Use Case
 Perfect for small to medium pizzerias that want to:
@@ -42,9 +42,6 @@ Integrate seamlessly with WhatsApp (most popular in Latin America)
 👨‍💻 Author
 Cristian Gabriel Aguirre
 Final-year student at UTN - Tecnicatura Universitaria en Programación
-
-💼 LinkedIn
-🐙 GitHub
 
 
 Note: This project represents real-world problem-solving and demonstrates scalable architecture design from concept to implementation.
